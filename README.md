@@ -13,3 +13,8 @@ Powershell scripts to comment an active PR with the terraform plan summary
     env:
       SYSTEM_ACCESSTOKEN: $(System.AccessToken)
 ```
+Make sure you run `terraform show` with json output
+```
+terraform plan -out='./plan/out.txt'
+terraform show -no-color -json ./plan/out.txt > ./plan/out.json
+```
