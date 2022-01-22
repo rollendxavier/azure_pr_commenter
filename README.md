@@ -7,7 +7,7 @@ Powershell scripts to comment an active PR with the terraform plan summary
     displayName: 'Comment PR with Terraform Plan'
     condition: and(succeeded(), eq(variables['Build.Reason'], 'PullRequest'))
     inputs:
-      filePath: '$(System.DefaultWorkingDirectory)/scripts/TerraformAnnotate.ps1'
+      filePath: '$(System.DefaultWorkingDirectory)/scripts/terraformAnnotate.ps1'
       arguments: '-JsonPlanPath $(System.DefaultWorkingDirectory)/plan/out.json'
       workingDirectory: $(System.DefaultWorkingDirectory)
     env:
